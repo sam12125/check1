@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "country": "",
+      "state": "aa",
+      "city": "",
+      "carType": "",
+      "carModel": "",
+      "id": 3
+    },
+    {
+      "country": "",
+      "state": "",
+      "city": "",
+      "carType": "as",
+      "carModel": "",
+      "id": 5
+    },
+    {
+      "country": "USA",
+      "state": "a",
+      "city": "b",
+      "carType": "c",
+      "carModel": "d",
+      "id": 6
+    }
+  ]
+}
