@@ -9,11 +9,11 @@ const path = require("path");
 app.use(cors());
 app.use(bodyParser.json());
 
-// const db = "mongodb+srv://sam01:9760888906@cluster0.e2ut4be.mongodb.net/formdata?retryWrites=true&w=majority";
-const db = "mongodb+srv://sam02:9760888906@cluster0.cios2d2.mongodb.net/form?retryWrites=true&w=majority"
+const db =
+  "mongodb+srv://sam02:9760888906@cluster0.cios2d2.mongodb.net/form?retryWrites=true&w=majority";
 
 //static file
- 
+
 // app.use(express.static(path.join(__dirname , '../frontend/build')))
 
 // app.get("*",function(req,res){
@@ -56,15 +56,14 @@ app.get("/read", (req, res) => {
   });
 });
 
-
 app.post("/insert", (req, res) => {
   const userModel = new UserModel();
   (userModel.country = req.body.country), //to be inserted
     (userModel.state = req.body.state), //to be inserted
     (userModel.city = req.body.city),
     (userModel.carType = req.body.carType),
-    (userModel.carModel = req.body.carModel)
-  console.log("insert api", req.body); 
+    (userModel.carModel = req.body.carModel);
+  console.log("insert api", req.body);
   userModel.save((err, data) => {
     if (err) {
       console.log(err);
