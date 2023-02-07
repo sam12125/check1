@@ -19,8 +19,9 @@ function Form() {
         data.push(dataOfcar);
         console.log('data', dataOfcar);
 
-        await fetch("http://localhost:5000/insert",{
+        await fetch("https://a2z-3zo6.onrender.com/insert",{
             method: "POST",
+            mode:"cors",
             headers: {
               "Content-Type": "application/json",
             },
@@ -35,7 +36,7 @@ function Form() {
     };
 
     const fetchData = () => {
-        axios.get('http://localhost:5000/read').then(
+        axios.get('https://a2z-3zo6.onrender.com/read').then(
             (response) => {
                 data = response.data;
                 // console.log(response.data.items)
@@ -54,8 +55,9 @@ function Form() {
 
     const handleDelete = async (id) => {
         console.log(id);
-        await fetch(`http://localhost:5000/delete?id=${id}`, {
+        await fetch(`https://a2z-3zo6.onrender.com/delete?id=${id}`, {
             method: "DELETE",
+            mode:"cors",
             headers: {
               "Content-Type": "application/json",
             },
@@ -70,31 +72,31 @@ function Form() {
     };
 
     return (
-        <div>
-            <form style={{display: 'flex', justifyContent: 'center', margin: 'auto', width: '50%', flexDirection: 'column'}}>
-                <select name="country" onChange={(e) => setCountry(e.target.value)} style={{marginBottom: '-12px'}}>
+        <div style={{marginBottom:"20px"}}>
+            <form style={{display: 'flex', justifyContent: 'center', margin: 'auto', width: '40%', flexDirection: 'column'}}>
+                <select name="country" onChange={(e) => setCountry(e.target.value)} style={{marginBottom: '-12px',outline:"none",borderRadius:"5px"}}>
                     <option value="">Select</option>
                     <option value="India">India</option>
                     <option value="USA">USA</option>
                     <option value="UK">UK</option>
                 </select>
                 <br></br>
-                <input type="text" placeholder="Enter State" onChange={(e) => setState(e.target.value)} style={{marginBottom: '5px'}} />
-                <input type="text" placeholder="Enter City" onChange={(e) => setCity(e.target.value)} style={{marginBottom: '5px'}} />
+                <input type="text" placeholder="Enter State" onChange={(e) => setState(e.target.value)} style={{marginBottom: '5px',outline:"none",borderRadius:"5px",borderStyle:"none",padding:"3px"}} />
+                <input type="text" placeholder="Enter City" onChange={(e) => setCity(e.target.value)} style={{marginBottom: '5px',outline:"none",borderRadius:"5px",borderStyle:"none",padding:"3px"}} />
                 <input
                     type="text"
                     placeholder="Enter Car Type"
                     onChange={(e) => setCartype(e.target.value)}
-                    style={{marginBottom: '5px'}}
+                    style={{marginBottom: '5px',outline:"none",borderRadius:"5px",borderStyle:"none",padding:"3px"}}
                 />
                 <input
                     type="text"
                     placeholder="Enter Car Model"
                     onChange={(e) => setCarmodel(e.target.value)}
-                    style={{marginBottom: '5px'}}
+                    style={{marginBottom: '5px',outline:"none",borderRadius:"5px",borderStyle:"none",padding:"3px"}}
                 />
                 <br></br>
-                <input type="Submit" style={{marginTop: '-15px'}} onClick={postData} />
+                <input type="Submit" style={{marginTop: '-15px',outline:"none",borderRadius:"5px",borderStyle:"none",padding:"3px"}} onClick={postData} />
             </form>
 
             <div>
@@ -133,3 +135,5 @@ function Form() {
 }
 
 export default Form;
+
+// https://a2z-3zo6.onrender.com/insert

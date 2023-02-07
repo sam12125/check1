@@ -1,8 +1,8 @@
 {
-    "name": "berry-material-react-free",
+    "name":"berry-material-react-free",
     "version": "1.0.0",
     "private": true,
-    "homepage": "https://berrydashboard.io/free",
+    "proxy":"https://a2z-3zo6.onrender.com",
     "dependencies": {
         "@emotion/react": "^11.1.5",
         "@emotion/styled": "^11.3.0",
@@ -37,7 +37,7 @@
     },
     "scripts": {
         "start": "react-scripts --openssl-legacy-provider start",
-        "build": "react-scripts build",
+        "build": "react-scripts --openssl-legacy-provider build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
